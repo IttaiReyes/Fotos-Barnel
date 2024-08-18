@@ -1,7 +1,7 @@
 Body {
     font-family: 'poppins';
     overflow-x: hidden;
-    background-color: #111111;
+    background-color: #272727;
 }
 
 /* Estilo del scrollbar */
@@ -39,7 +39,7 @@ Body {
     border-radius: .5rem;
     
     background-color: rgba(0, 0, 0, .3);
-    box-shadow: 0 4px 6px rgba(222, 222, 222, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     
     transition: all 0.3s ease;
@@ -51,26 +51,44 @@ Body {
     top: 0;
 
     max-width: 100%;
-    border-radius: 0 0 .5rem .5rem;
+    border-radius: 0 0 .7rem .7rem;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .navbar-brand {
     color: #fff;
 }
+
+.navbar.scrolled .navbar-brand{
+    color: #000;
+}
+
 .navbar .nav-link {
     color: #fff;
 }
 
+.navbar.scrolled .nav-link{
+    color: #000;
+}
+
 .navbar .nav-link.active {
-    color: #fffaa4;
+    color: #eee64e;
+    font-weight: 600;
+}
+
+.navbar.scrolled .nav-link.active {
+    color: #616161;
     font-weight: 600;
 }
 
 .navbar .nav-link:hover {
-    color: #ddd;
+    color: #c1c1c1;
+}
+
+.navbar.scrolled .nav-link:hover {
+    color: #fff;
 }
 
 .navbar-toggler {
@@ -101,4 +119,72 @@ Body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* Styles About */
+
+
+/* Styles Gallery */
+.gallery .card-gallery {
+    display: flex;
+    position: relative;
+
+    width: 100%;
+    height: 350px;
+
+    border-radius: .5rem;
+
+    text-align: center;
+    
+    overflow: hidden;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.gallery .card-gallery:hover {
+    scale: 1.03;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9), -6px -6px 15px rgba(255, 255, 255, 0.2);
+}
+
+.gallery .card-gallery .card-img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.gallery .card-gallery .card-img .img-link {
+    display: block;
+
+    height: 100%;
+    width: 100%;
+}
+
+.gallery .card-gallery .card-img .img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery .card-gallery .card-info {
+    position: absolute;
+    bottom: -100px;
+
+    width: 90%;
+    margin: 10px;
+    border-radius: .5rem;
+
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+
+    transition: all 0.5s ease;
+}
+
+.gallery .card-gallery:hover .card-info {
+    bottom: 0;
+}
+
+@media (max-width: 1200px) {
+    .gallery .card-gallery {
+        height: 300px;
+    }
 }
